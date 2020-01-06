@@ -14,7 +14,7 @@ const salon = {
     },
     pets:[],
     count:function(){
-        alert("We have: " + salon.pets.length + "pets registered.");
+       
     }
 }
 
@@ -22,7 +22,7 @@ const salon = {
 
 let {name,phone,address:{street,number},workingHours:{days,open,close}}=salon;
 
-console.log(name,phone,street);
+//console.log(name,phone,street);
 
 document.querySelector(".info").innerHTML=`<p> ${name} <br> ${street},${number} <br> ${days} from ${open} to ${close} <br> ${phone}`;
 
@@ -85,8 +85,8 @@ var textphone = document.getElementById('phoneContact');
 function register(){
     const thePet = new Pet(textname.value,textage.value,textbreed.value,textgender.value,textservice.value,textowner.value,textphone.value);
     salon.pets.push(thePet);
-    //console.log(thePet);
-    alert("Your pet has now been registered");
+    console.log(thePet);
+    alert("Your pet has now been registered.");
     clean();
     displayPet(thePet);
 }
@@ -113,8 +113,9 @@ function displayPet(aPet){
                 <td> ${aPet.phoneContact}</td>
                 <td> 
                     <button class="btn btn-outline-danger" onclick='remove("${aPet.id}");'>Delete</button>
-                </td>`;
-    tBody.innerHTML +=row;          
+                </td> 
+              </tr>`;
+    tBody.innerHTML+=row;          
 }
 
 function remove(petId){
@@ -163,11 +164,18 @@ function Search(){
         }
         
     }
-      
-    if(flag==false){
-        document.getElementById("result").innerHTML="It doesn't exist";
-    }
+    
     //deleting the text in the input search
     document.getElementById("petSearch").value="";
+}
+
+function reset(){
+
+    var flag=true;
+    for (var r=0;r<salon.pets.length;r++){       
+        $('#pet'+r).show();
+                           
+    }       
+
 }
 

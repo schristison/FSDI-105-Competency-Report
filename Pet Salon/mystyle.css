@@ -35,13 +35,11 @@ h1{
     height: auto;
     background: rgba(27, 26, 27, 0.986);
 }
-/* .info{
+.info{
     font-size: 1rem;
-    color: black;
-    height: 15rem;
-    color: blue;
-    background: #e1e1e1;
-} */
+    color: black;   
+    background: #e1e1e1;    
+} 
 h2{
     color: rgb(201, 153, 64);
     text-align: center;
